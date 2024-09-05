@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>shbrbush</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@100..900&display=swap');
+
+        body {
+            font-family: "Noto Kufi Arabic", sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between; /* لضبط المسافات بين العناصر */
+            min-height: 100vh; /* لتمديد الصفحة إلى كامل الشاشة */
+            text-align: center;
+        }
+
+        header {
+            margin-top: 20px; /* لإضافة مسافة في الأعلى */
+        }
+
+        .icon {
+            width: 100px; /* يمكنك تعديل العرض حسب رغبتك */
+            height: auto;
+        }
+
+        form {
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            max-width: 90%;
+            margin: 20px auto; /* لتوسيط الـ form وجعلها مناسبة */
+        }
+
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 4px;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .icon-copy {
+            cursor: pointer;
+            display: inline-block;
+            margin-top: 10px;
+            color: #007bff;
+        }
+
+        .icon-copy:hover {
+            color: #0056b3;
+        }
+
+        .message {
+            color: green;
+            display: none;
+            margin-top: 10px;
+        }
+
+        footer {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #555;
+            padding: 10px 0; /* لإضافة مسافة حول النص في الفوتر */
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <img src="https://cdn.youcan.shop/stores/63c84cd36762e70833748cf4801b04d6/others/GZNM4gfU0ucMOo9sPx9WICc8F5VRdxaygo5ykkpW.png" alt="Icon" class="icon" /> <!-- صورة في الهيدر -->
+    </header>
+
+    <form>
+        <p>لمشاهدة جميع المنتجات برجاء نسخ الكود</p>
+        <div>
+            <span id="code">20248888</span>
+            <i class="icon-copy" onclick="copyCode()">📋 نسخ </i>
+        </div>
+        <button type="button" onclick="goToNextPage()">التالي</button>
+        <p class="message" id="message">تم نسخ الكود!</p>
+    </form>
+
+    <footer>
+        <span>© جميع الحقوق محفوظة لموقع شنيطتي للماركات العالمية 2024</span>
+    </footer>
+
+    <script>
+        function copyCode() {
+            const codeText = document.getElementById('code').innerText;
+            navigator.clipboard.writeText(codeText).then(() => {
+                const message = document.getElementById('message');
+                message.style.display = 'block';
+                setTimeout(() => {
+                    message.style.display = 'none';
+                }, 2000);
+            }).catch(err => {
+                console.error('Failed to copy text: ', err);
+            });
+        }
+
+        function goToNextPage() {
+            window.location.href = 'https://richard-team.x.yupoo.com/albums'; // استبدل هذا بالصفحة التالية المطلوبة
+        }
+    </script>
+
+</body>
+</html>
